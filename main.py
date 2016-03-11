@@ -97,7 +97,7 @@ def knightsDist_Smarter(srcX,srcY,dstX,dstY):
 def runTests(targetFunc):
     # Run some test scenarios and time them for fun
     # Ref: https://en.wikipedia.org/wiki/Knight_%28chess%29#Movement
-    timeit_count = 100
+    timeit_count = 5
 
     print('Test 1: Single move case - ', end='')
     func = lambda: targetFunc(0,0,2,1)
@@ -118,8 +118,8 @@ def runTests(targetFunc):
     print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
     print('Test 4: Distant case - ', end='')
-    func = lambda: targetFunc(0,0,6,-6)
-    assert(func() == 4)
+    func = lambda: targetFunc(0,0,8,-8)
+    assert(func() == 6)
     print('Ok ',end='')
     print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
