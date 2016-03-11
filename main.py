@@ -103,25 +103,25 @@ def runTests(targetFunc):
     func = lambda: targetFunc(0,0,2,1)
     assert(func() == 1)
     print('Ok ',end='')
-    print('(avg ' + '{:.2e}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
+    print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
     print('Test 2: Adjacent grid case - ', end='')
     func = lambda: targetFunc(0,0,-1,0)
     assert(func() == 3)
     print('Ok ',end='')
-    print('(avg ' + '{:.2e}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
+    print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
     print('Test 3: Four move case - ', end='')
     func = lambda: targetFunc(0,0,-2,-2)
     assert(func() == 4)
     print('Ok ',end='')
-    print('(avg ' + '{:.2e}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
+    print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
     print('Test 4: Distant case - ', end='')
-    func = lambda: targetFunc(0,0,5,-4)
-    assert(func() == 3)
+    func = lambda: targetFunc(0,0,6,-6)
+    assert(func() == 4)
     print('Ok ',end='')
-    print('(avg ' + '{:.2e}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
+    print('(avg ' + '{:.2E}'.format(timeit.timeit(func,number=timeit_count)/timeit_count) + ' sec)')
 
 if __name__ == '__main__':
     print('Knight\'s Distance Algorithms')
