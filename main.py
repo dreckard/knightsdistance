@@ -17,6 +17,7 @@
 import timeit
 from collections import deque
 
+# Generate the 8 possible moves from a given position
 def knightMoves(coords):
     out = list()
     out.append((coords[0]+1,coords[1]+2))
@@ -37,6 +38,7 @@ def knightMoves(coords):
 
     return out
 
+# Naive implementation
 def knightsDist_Naive(srcX,srcY,dstX,dstY):
     src = (srcX,srcY)
     dst = (dstX,dstY)
@@ -56,6 +58,7 @@ def knightsDist_Naive(srcX,srcY,dstX,dstY):
                 queue.extend(knightMoves(coords))
         moves += 1
 
+# Slightly less naive implementation
 def knightsDist_Smarter(srcX,srcY,dstX,dstY):
     # Quickly check for sane input
     if srcX == dstX and srcY == dstY:
